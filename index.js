@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 const token = process.env('HACKNIT_GITHUB_KEY')
-const REPO = 'seplagniteroi/hacknit'
+const REPO = process.env('HACKNIT_REPO') || 'seplagniteroi/hacknit'
 
 const conf = {
     json: true,
