@@ -1,0 +1,12 @@
+{
+  "name": "pulltool",
+  "version": "00.0.1",
+  "description": "Mass merger",
+  "main": "index.js",
+  "repository": "https://github.com/xaiki/pulltool",
+  "author": "Niv Sardi <x@btn.sh>",
+  "license": "GPL3.0",
+  "dependencies": {
+    "node-fetch": "^2.2.0"
+  }
+}
