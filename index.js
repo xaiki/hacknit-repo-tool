@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const process = require('process');
 
 const token = process.env.HACKNIT_GITHUB_KEY
-const REPO = process.env.HACKNIT_REPO || 'seplagniteroi/hacknit'
+const REPO = process.env.HACKNIT_REPO
 
 const conf = {
     json: true,
@@ -41,7 +41,8 @@ const debug = (arg) => {
 }
 
 const run = async () => {
-    const processed = 0
+    let processed = 0
+    console.error('repo', REPO)
     const master = await gh.get(`repos/${REPO}/branches/master`)
     const head = master.commit.sha
     const pulls = await gh.get(`repos/${REPO}/pulls`)
@@ -61,7 +62,7 @@ const run = async () => {
             console.error(`couldn't parse PR #${pull.number}`, pull.title)
         }
     })
-    console.log(`proccessed: ${proccessed} repos`)
+    console.log(`proccessed: ${processed} repos`)
 }
 
 run()
